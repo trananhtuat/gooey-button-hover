@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Gooey button
+    </title>
+    <!-- APP CSS -->
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+
+    <button class="btn">
+        <span class="btn-txt">Gooey</span>
+        <span class="btn-goo-box"></span>
+        <span class="btn-goo-box"></span>
+        <span class="btn-goo-box"></span>
+    </button>
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="filter-svg">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+        </defs>
+    </svg>
+
+</body>
+
+</html>

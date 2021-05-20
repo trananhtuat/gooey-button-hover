@@ -1,0 +1,87 @@
+:root {
+    --main-color: #e84393;
+    --body-bg: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: cursive;
+    background-color: var(--body-bg);
+}
+
+#filter-svg {
+    display: none;
+}
+
+.btn {
+    width: 150px;
+    height: 150px;
+    border: none;
+    outline: none;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: cursive;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    filter: url(#goo);
+    position: relative;
+}
+
+.btn .btn-goo-box {
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--main-color);
+    transition: all 0.5s cubic-bezier(0.75, 0.32, 0, 0.93);
+}
+
+.btn .btn-txt {
+    z-index: 1;
+}
+
+.btn .btn-goo-box {
+    z-index: -1;
+}
+
+.btn .btn-goo-box:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    right: calc(50% - 50px);
+}
+
+.btn .btn-goo-box:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+}
+
+.btn .btn-goo-box:nth-child(4) {
+    width: 70px;
+    height: 70px;
+    top: calc(50% - 35px);
+    right: calc(50% - 35px);
+}
+
+.btn:hover .btn-goo-box:nth-child(2) {
+    right: -50px;
+    top: 70%;
+}
+
+.btn:hover .btn-goo-box:nth-child(3) {
+    left: -70px;
+}
+
+.btn:hover .btn-goo-box:nth-child(4) {
+    top: -60px;
+}
